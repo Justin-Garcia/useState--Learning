@@ -8,8 +8,8 @@ function App() {
     <>
       <div>
         {/* <Counter /> */}
-        {/* <DynamicCounter /> */}
-        <Login />
+        <DynamicCounter />
+        {/* <Login /> */}
         </div>
     </>
   )
