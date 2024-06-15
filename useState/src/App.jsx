@@ -1,6 +1,7 @@
-import Counter from './components/Counter'
+import React from 'react'
+// import Counter from './components/Counter'
 import DynamicCounter from './components/DynamicCounter'
-import Login from './components/Login'
+// import Login from './components/Login'
 import './App.css'
 
 function App() {
