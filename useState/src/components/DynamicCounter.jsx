@@ -16,12 +16,13 @@ function DynamicCounter() {
   const multiply = ()=> setCount(count * increment);
   const divide = ()=> setCount(count / increment);
   
+  
   function changeOperation() {
-    return document.getElementById("add") == true
+    return document.getElementById("add") === true
       ? add
-      : document.getElementById("subtract") == true
+      : document.getElementById("subtract") === true
       ? subtract
-      : document.getElementById("multiply") == true
+      : document.getElementById("multiply") === true
       ? multiply
       : divide
   } // return operator based on selected radio button
@@ -31,10 +32,8 @@ function DynamicCounter() {
   return (
     <div>
       <p>Counter</p>
-      <button onClick={changeOperation()}>Increment</button>
+      <button id="result" onClick={changeOperation()}>=</button>
       {/* increment count by set number */}
-      <button onClick={changeOperation()}>Decrement</button>
-      {/* decrement count by set number */}
       <p>{count}</p>
 
       {/* MISTAKE: when updating the count in the buttons above, I used {} for the 'value' state which would then cause the app to add [object Object] at the end of count instead of changing the increment size  */}
@@ -57,11 +56,11 @@ function DynamicCounter() {
         />
         <label htmlFor="add">Add</label>
         <input type="radio" id="subtract" value="Subtract" name="operation" />
-        <label htmlFor="add">Subtract</label>
+        <label htmlFor="subtract">Subtract</label>
         <input type="radio" id="multiply" value="Multiply" name="operation" />
-        <label htmlFor="add">Multiply</label>
+        <label htmlFor="multiply">Multiply</label>
         <input type="radio" id="divide" value="Divide" name="operation" />
-        <label htmlFor="add">Divide</label>
+        <label htmlFor="divide">Divide</label>
       </form>
     </div>
   );

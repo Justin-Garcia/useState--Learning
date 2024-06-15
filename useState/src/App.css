@@ -6,3 +6,7 @@ button {
 button:hover {
     color: Red;
 }
+
+.result {
+    width: 2rem;
+}
