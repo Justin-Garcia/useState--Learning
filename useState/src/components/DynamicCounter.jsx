@@ -8,10 +8,10 @@ function DynamicCounter() {
   // const [operation, setOperation] = useState("+"); | useState sets initial operation to add (+) MISTAKE: set operator to string value using quotes to avoid errors -- does not change the operation as the application does not recognize strings as operators
 
   function operator() {
-    return (document.getElementById('add') == true) ? '+' 
-    : (document.getElementById('subtract') == true) ? '-' 
-    : (document.getElementById('multiply') == true) ? '*' 
-    : '/' // return operator based on selected radio button
+    return (document.getElementById('add') == true) ? setCount(count + increment) 
+    : (document.getElementById('subtract') == true) ? setCount(count - increment) 
+    : (document.getElementById('multiply') == true) ? setCount(count * increment) 
+    : setCount(count / increment) // return operator based on selected radio button
 }
 //MISTAKE: Cannot pass math operator as values to change numerical values through if statements
 
