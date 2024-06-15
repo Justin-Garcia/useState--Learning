@@ -7,19 +7,21 @@ function DynamicCounter() {
   const [increment, setIncrement] = useState(1); // useState sets initial increment value to 1
   // const [operation, setOperation] = useState("+"); | useState sets initial operation to add (+) MISTAKE: set operator to string value using quotes to avoid errors -- does not change the operation as the application does not recognize strings as operators
 
-  function operator() {
-    return (document.getElementById('add') == true) ? setCount(count + increment) 
-    : (document.getElementById('subtract') == true) ? setCount(count - increment) 
-    : (document.getElementById('multiply') == true) ? setCount(count * increment) 
-    : setCount(count / increment) // return operator based on selected radio button
-}
-//MISTAKE: Cannot pass math operator as values to change numerical values through if statements
+    if (document.getElementById('add') == true) { let changeOperation = setCount(count + increment) }
+    else if (document.getElementById('subtract') == true) { let changeOperation = setCount(count - increment) }
+    else if (document.getElementById('multiply') == true) { let changeOperation = setCount(count * increment) }
+    else {let changeOperation = setCount(count / increment)};
+    
+    return changeOperation;// return operator based on selected radio button
+
+    
+//MISTAKE: Cannot pass math operator as values to change numerical values through if statements | let property not being read and passed through an if-else chain -- Make the operations a variable?
 
 
   return (
     <div>
       <p>Counter</p>
-      <button onClick={() => setCount(count + increment)}>Increment</button>
+      <button onClick={() => `${changeOperation}`}>Increment</button>
       {/* increment count by set number */}
       <button onClick={() => setCount(count - increment)}>Decrement</button>
       {/* decrement count by set number */}
