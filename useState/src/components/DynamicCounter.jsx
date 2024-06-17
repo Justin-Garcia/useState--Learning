@@ -18,11 +18,11 @@ function DynamicCounter() {
   
   
   function changeOperation() {
-    return document.getElementById("add") === true
+    return document.getElementById("add")
       ? add
-      : document.getElementById("subtract") === true
+      : document.getElementById("subtract")
       ? subtract
-      : document.getElementById("multiply") === true
+      : document.getElementById("multiply")
       ? multiply
       : divide
   } // return operator based on selected radio button
@@ -33,7 +33,6 @@ function DynamicCounter() {
     <div>
       <p>Counter</p>
       <button id="result" onClick={changeOperation()}>=</button>
-      {/* increment count by set number */}
       <p>{count}</p>
 
       {/* MISTAKE: when updating the count in the buttons above, I used {} for the 'value' state which would then cause the app to add [object Object] at the end of count instead of changing the increment size  */}
